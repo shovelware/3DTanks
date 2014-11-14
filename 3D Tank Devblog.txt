@@ -1,0 +1,153 @@
+14-11-14
+This is a personal blog I kept during 3D Tanks, for myself mostly. I -could- have gone through and made it squeaky clean and less vulgar but really this is how things went and this is how they'll stay. I figure if you're interested enough it won't be such a big deal. Looking back on it now, you can really see my enthusiasm get sucked out by other projects and exams and other obligations as the time wore on. It also seems like I wasted a lot of time, and perhaps that's true? I feel like there are certain states of mind that you'll do more harm than good while coding in, and constant, horrible fatigue is one of them. Things got very hairy towards the end of second year, personally and scholarly, and this was just another thing on the pile that didn't get a lot of priority. The early days were really fun, and I'd like to do something like it again sometime for sure.
+---
+3D Tank Devblog
+Main purpose: Keep me focused and remind me of my accomplishments so I don’t freak out about the deadline. I probably will anyway, but, like, whatever, man.
+T-Minus: 9 Days
+
+Start Date -> 07-03-13
++Wrote Inherited Primitive class with a bunch of functionality including automatically generated flat shading, wireframe highlights and some other fun stuff
++Wrote a bunch of Primitive declarations and a little Primitive demo that Ken called “Very nice”
++Started building Tank
++Had a working tank as per spec but eh, I want it to do barrel rolls without breaking
++Poked around in Ken’s code a little
++Read up on services and learned how to use Quaternions for rotation and avoid Gimbal lock
++Finally learned how to use ternary statements properly, also chaining assignments!
+
+08-03-14
++Replaced Ken’s art, converted textures to compressed formats
++Camera class started
++Camera matching Ken’s functionality (Pan & Movement)
++Progress towards camera rotation with Quats, still confuse me a little
++Camera FoV and Aspect Lerp, for zooming and other visual juice
++Poked Streets, figuring out how to replace them with Prims
+
+09-03-14
++Fixed camera rotation problems, can still get janky, but eh, ask Ken
++Updated Primitive Class to allow for separate wire and face vertices, but I broke it too
++Stayed in bed all day after that cause fuck
+
+10-03-14
++Fixed a bunch of camera issues, tidied up some stuff, cheers Ken!
++Learned about synthing sound with XNA, excited to try it but first I need a tank and rockets and buildings and shit.
++Tried to be clever with my Primitives class again, broke EVERYTHING. I’ll fix it later
+
+11-03-14
++Unbroke my Primitives as promised, resigned to storing the edges in a separate array. It’s messy but it’ll do
++Messed around with arranging Primitive rotation in a list, it could be messy or brilliant and I’m not about to approach it now
++Started work on concepting buildings and making a class, writing boilerplate while I ruminate fitting Primitives together satisfactorily
++TODO: Rewrite Primitive constructor & draw to receive BasicEffect & GraphicsDeviceManager through services.
++Hashed out 6/9 building designs and 4/? projectiles, now waiting for Primitive locking to just churn ‘em out
+
+12-03-14
++Games Fleadh YEAH actually there was an audio guy at it and it was pretty interesting and I figured I’d do doppler and stuff but it turns out XNA has functions for doing all 3D Audio heavy lifting already lol
++Implemented colour lerping on Primitives
++Did a bunch of work on Primitive trying to sort out the updates, not a lot of progress but Ken tomorrow will help me sort it
++Implemented services, fixed a lot of construction stuff in Primitive
++Found what was breaking my tank, shared Basiceffect makes the last effect.World affect all subsequent draw calls. Fixed it by applying a local world matrix right before draw, and flipping fog or lighting in main still cascades!
++Wrote most of an inheritable building class, got a Bunker working except for Primitive update heritage which I will fix tomorrow
++Super hyped to get cracking on them and the tank
+
+13-03-14
++Woke up, solved Primitive update (FICK JA) Turns out it was something really stupid but whatever it works
++Also worked out some Lerp checks and stuff but that’s not important TANK
++Churned out 3 buildings in Ken’s, will finish after
++Started working on tank spec, gonna get firing later
++Hashed out the rest of my pre-drawn buildings, added functionality to draw them with streets and stuff. (They look great!)
++Had the bright idea to make streets inherit from buildings instead of from Primitives so I can build them up and add multiple layers. Requires redoing the boilerplate I had for each type but eh, I can live with it
++Wrote a Line Prim in preparation for above
++Tomorrow is time to rewrite streets demo and start lashing it together
++Excite
+
+14-03-14
++Took the day off because I am burnt out and Titanfall is here. Functioning game demo by monday is my goal
+
+15-03-14
++Converted streets to Buildings, renamed Building.cs to Tile.cs for grok reasons
++Did most of the work converting StreetFactory to generate tiles. Broke a little, but I’m taking it easy today because I’m still fucking wrecked.
+
+16-03-14
++Fixed my streets and streetfactory, implemented tank, made some camera hardpoints, all still needs work and tidying but I have a functioning demo as per my promise
++By Wednesday: Tank inertial movement and general refactoring, camera hardpoints finalising, Street and building color separation //HA
++By Friday: Figure out why building things off-origin breaks everything
+
+17-03-14
++Fuck-all, it’s Paddy’s day
+
+18-03-14
++Not a lot, general playing in one class, Josh got Titanfall and I’m still tired as fuck I really should sleep more
+
+19-03-14
++Titanfall and TTGL. That extension though
+
+20-03-14
++PLANNED TODO: Tank Hardpoints and Map class
+
+21-03-14
++Battleship stealing my priority, fuck UML
+
+22-03-14
++More Battleship and general knackeredness
+
+23-03-14
++Picked up foreigners from the airport, running on fumes
++Battleship extension! Means it can distract me til Wed
+
+24-03-14
++Still running on fumes, but yeah drinks cause Ally’s back in town and we haven’t seen her in forever plus someone’s dead so I think she needs this
+
+25-03-14
++More drinks, this time with foreigners fuck I’m tired (Actually I didn’t go because I’m well too wrecked lol)
++Battleship’s done and dusted though, and fuck OGRE, so I’m down to pretty much just this to work on in free time (Pete’s is labtime and Animation is a piece of piss)
+
+26-03-14
++Game day for foreigners, still tired af
+
+27-03-14
++Kill La Kill is over, the end of an era. Obv got nothing done today
+
+28-03-14
++John’s 24th, god damn I’m never gonna work again
++95% on Battleship though, so that’s a relief
+
+29-03-14
++Hibernation
+
+30-03-14
++More hibernation, seriously I slept for 48 hours this weekend and I don’t care who knows it, I needed the fuck out of that
+
+WEEK GOALS: Implement Tank movement and MapData, Bullets, Particles
+31-03-14
++Cleaned self, cleaned room, cleaned life, general cleanup. Excited to get cracking after wasting all this time.
++Fixed how my Tank Camera Hardpoints work, now just to make some. J/K done
++Made transparency in building parts possible, TWO DRAW METHODS??? But it works and that’s what matters
++A bunch of tidying up in Tank and StreetFactory, general maintennance
++MapData started, it’s kind of messy, gonna have to tear it apart and redo it. I’ll get there though, it’s just hard to hold it in my head all at once
+
+01-04-13
++College! Food! Table Quiz! Bed!
+
+02-04-13
++Finished Map and MapData, looking into events and sounds now
++Fuck events/delegates I don’t even what’s going on
++Started Physics, good god I hate it because I don’t understand it but love it cause it’s neat when it does work which is NEVER
++Wait no I kind of fixed it, I’ll look at it in Ken’s tomo
+
+03-04-13
++Separated cameras, one for each view. Gotta get ortho working still
++Added a rudimentary skybox cause I was sick of looking out at the howling void
+
+
+13-04-13
++Where did those 10 days go I don’t know but I’m burnt the fuck out so I don’t care. I did nothing anyways.
++Made the change from directly manipulating Tank positions to Pseudophysics-driven movement
++Started work on projectiles and inheritance, gave up cause I couldn’t read straight.
+
+
+19-04-13
++Animation stealing devtime, I just don’t care any more. Plan is to get shooting and collision working, make a gallery, call it a day. I’m done with this year. So done. I’ve passed with or without these projects, but my pride keeps me going anyway.
++Drafted projectiles with inheritance.
+
+22-04-13
++Made firing projectiles, need some tweaks but that’s just number crunching.
++Need to do collision but thoughts of working on anything.

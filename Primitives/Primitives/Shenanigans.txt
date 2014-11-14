@@ -1,0 +1,28 @@
+﻿
+            xRot = Matrix.CreateFromAxisAngle(Vector3.Transform(Vector3.UnitX, yRot * zRot), vRot.X);
+            yRot = Matrix.CreateFromAxisAngle(Vector3.Transform(Vector3.UnitY, xRot * zRot), vRot.Y);
+            zRot = Matrix.CreateFromAxisAngle(Vector3.Transform(Vector3.UnitZ, xRot * yRot), vRot.Z);
+
+			
+        #region Old U&D
+
+        public void Update(Matrix proj, Matrix view, GameTime gameTime)
+        {   //Only the last thing you update takes effect, and then affects everything???
+            //Commenting out the barrel update or moving turret to last causes the turret update to rotate everything???
+            //The axes on the bottom of the draw copy the rotation quats for the bottom, turret and barrel respectively
+            //Even if the primitive itself isn't rotating, the axes will???
+            //I am utterly lost.
+            RotateTurretLeft();
+            bottom.Update(proj, view, gameTime);
+            turret.Update(proj, view, gameTime);
+            barrel.Update(proj, view, gameTime);
+        }
+
+        public void Draw(GraphicsDeviceManager g)
+        {
+            bottom.Draw(g);
+            turret.Draw(g);
+            barrel.Draw(g);
+        }
+
+        #endregion
