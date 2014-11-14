@@ -7,4 +7,7 @@ I can be reached at http://github.com/shovelware , which is presumably where thi
 -Shovel
 
 ---
-3D Tanks was our final project for 3D Graphics and Audio I in year 2 of Computer Games Development. You can read some thoughts on it at http://shovelwaregames.wordpress.com/p/y2/#3D
+Toolset: XNA
+Subject: 3D Graphics and Audio I
+
+Portfolio page: http://shovelwaregames.wordpress.com/p/y2/#3D
